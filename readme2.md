@@ -53,14 +53,20 @@ Get your project up and running in no time:
 ## 📂 Project Structure
 
 your-nextjs-project/
+│
 ├── app/
-│ ├── components/
-│ ├── layout.tsx
-│ └── page.tsx
+│   ├── components/
+│   ├── layout.tsx
+│   └── page.tsx
+│
 ├── public/
+│
 ├── styles/
+│
 ├── next.config.js
+│
 ├── package.json
+│
 └── tsconfig.json
 
 ## 🎨 Customization
