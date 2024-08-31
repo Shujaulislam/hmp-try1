@@ -1,133 +1,125 @@
 "use client"
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-const MOCKDATA = [
-  {
-    iconAlt: 'Gauge Icon',
-    title: 'Extreme performance',
-    description:
-      "This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit",
-  },
-  {
-    iconAlt: 'User Icon',
-    title: 'Privacy focused',
-    description:
-      "People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma,"
-  },
-  {
-    iconAlt: 'Cookie Icon',
-    title: 'No third parties',
-    description:
-      "They're popular, but they're rare. Trainers who show them off recklessly may be targeted by thieves",
-  },
-  {
-    iconAlt: 'Lock Icon',
-    title: 'Secure by default',
-    description:
-      "Although it still can't fly, its jumping power is outstanding, in Alola the mushrooms on Paras don't grow up quite right",
-  },
-  {
-    iconAlt: 'Message Icon',
-    title: '24/7 Support',
-    description:
-      "Rapidash usually can be seen casually cantering in the fields and plains, Skitty is known to chase around after its own tail",
-  },
-];
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+};
 
-interface FeatureProps {
-  iconAlt: string;
-  title: React.ReactNode;
-  description: React.ReactNode;
-}
-
-function Feature({ iconAlt, title, description }: FeatureProps) {
+const Page = () => {
   return (
-    <div className="flex flex-col items-start">
-      <div className="bg-gray-100 rounded-full p-2 inline-flex justify-center items-center">
-        <Image src="/path/to/your/icon.svg" alt={iconAlt} width={20} height={20} />
-      </div>
-      <h3 className="mt-4 mb-2 text-lg font-semibold">{title}</h3>
-      <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
-    </div>
-  );
-}
-
-const FAQData = [
-  {
-    question: "What are some random questions to ask?",
-    answer: "Some random questions could be: 'If you could have dinner with any historical figure, who would it be?', 'What's the most unusual thing you've ever eaten?', or 'If you could instantly become an expert in one subject, what would it be?'"
-  },
-  {
-    question: "Do you include common questions?",
-    answer: "Yes, we include a mix of common and unique questions to cater to a wide range of interests and curiosities."
-  },
-  {
-    question: "Can I use this for 21 questions?",
-    answer: "Absolutely! You can select any number of questions from our list to play games like 21 questions or to spark interesting conversations."
-  },
-  {
-    question: "Are these questions for girls or for boys?",
-    answer: "Our questions are designed to be inclusive and suitable for everyone, regardless of gender."
-  },
-  {
-    question: "What do you wish you had more talent doing?",
-    answer: "This is actually one of our questions! It's a great way to learn about someone's aspirations and interests."
-  }
-];
-
-function FAQItem({ question, answer }: { question: string; answer: string }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="border-b border-gray-200 py-4">
-      <button
-        className="flex justify-between items-center w-full text-left"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className="font-medium">{question}</span>
-        <span className="text-2xl">{isOpen ? '-' : '+'}</span>
-      </button>
-      {isOpen && <p className="mt-2 text-gray-600">{answer}</p>}
-    </div>
-  );
-}
-
-export default function FeaturesGrid() {
-  return (
-    <>
-      <div className="py-20 px-4 max-w-7xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-          Integrate effortlessly with any technology stack
-        </h1>
-        <div className="max-w-2xl mx-auto">
-          <p className="text-sm md:text-base text-center text-gray-600">
-            Every once in a while, you'll see a Golbat that's missing some fangs. This happens when
-            hunger drives it to try biting a Steel-type Pokémon.
-          </p>
+    <div className="min-h-screen bg-white text-black">
+      {/* Header */}
+       {/* Hero Section */}
+       <section className="relative text-white pt-32 pb-16">
+        <div className="absolute bg-black/60 inset-0 z-0">
+          <Image
+            src="/StoreDot.jpg"
+            alt="Hero Background"
+            layout="fill"
+            objectFit="cover"
+          />
         </div>
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-          {MOCKDATA.map((feature, index) => (
-            <Feature key={index} {...feature} />
-          ))}
-        </div>
-      </div>
+        <div className="absolute inset-0 bg-black opacity-80 z-10"></div>
+        <motion.div
+          className="container mx-auto px-4 text-center relative z-10"
+          initial="initial"
+          animate="animate"
+        >
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Explore Our Battery Solutions</h1>
+          <p className="text-xl">Innovative and reliable power solutions for the future of mobility.</p>
+        </motion.div>
+      </section>
 
-      <section className="py-20 px-4 max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-          Frequently Asked Questions
-        </h2>
-        <div className="max-w-2xl mx-auto mb-12">
-          <p className="text-sm md:text-base text-center text-gray-600">
-            Answered all frequently asked questions. Still confused? Feel free to contact us.
-          </p>
+      {/* Products and Solutions Section */}
+      <section className="py-24 px-32 ">
+        {/* Battery Swap Station Partnership */}
+        <div className="flex flex-col lg:flex-row items-center gap-8 ">
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-3xl font-semibold text-orange-600 mb-4">Battery Swap Station Partnership</h2>
+            <p className="text-gray-700 mb-4">Partner with us to build a network of battery swap stations for efficient and quick battery exchanges.</p>
+            <button className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">Partner with Us</button>
+          </div>
+          <div className="w-full lg:w-1/2">
+            {/* Animated Infographic Placeholder */}
+            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
+              <p className="text-gray-400">[Infographic or Animation]</p>
+            </div>
+          </div>
         </div>
-        <div className="max-w-3xl mx-auto">
-          {FAQData.map((item, index) => (
-            <FAQItem key={index} question={item.question} answer={item.answer} />
-          ))}
+
+        {/* Rental Batteries for EV Drivers */}
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-8">
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-3xl font-semibold text-orange-600 mb-4">Rental Batteries for EV Drivers</h2>
+            <p className="text-gray-700 mb-4">Affordable rental battery solutions for electric vehicle drivers, ensuring uninterrupted journeys.</p>
+            <button className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">Explore Rentals</button>
+          </div>
+          <div className="w-full lg:w-1/2">
+            {/* Product Slider Placeholder */}
+            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
+              <p className="text-gray-400">[Product Slider]</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Li-ion EV Batteries */}
+        <div className="flex flex-col lg:flex-row items-center gap-8">
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-3xl font-semibold text-orange-600 mb-4">Li-ion EV Batteries</h2>
+            <p className="text-gray-700 mb-4">High-performance Li-ion batteries for electric vehicles, designed for maximum efficiency and durability.</p>
+            <button className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">Discover EV Batteries</button>
+          </div>
+          <div className="w-full lg:w-1/2">
+            {/* Animated Icons Placeholder */}
+            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
+              <p className="text-gray-400">[Animated Icons]</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Li-ion Storage Batteries */}
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-8">
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-3xl font-semibold text-orange-600 mb-4">Li-ion Storage Batteries</h2>
+            <p className="text-gray-700 mb-4">Reliable and sustainable energy storage solutions for both residential and commercial use.</p>
+            <button className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">View Storage Options</button>
+          </div>
+          <div className="w-full lg:w-1/2">
+            {/* Grid Layout for Images and Details */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-gray-100 rounded-lg h-32 flex items-center justify-center">
+                <p className="text-gray-400">[Image]</p>
+              </div>
+              <div className="bg-gray-100 rounded-lg h-32 flex items-center justify-center">
+                <p className="text-gray-400">[Image]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Customised Batteries*/}
+        <div className="flex flex-col lg:flex-row items-center gap-8">
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-3xl font-semibold text-orange-600 mb-4">Customised Battery Packs</h2>
+            <p className="text-gray-700 mb-4">Customised battery packs with minute with custom power, voltage, output , connection type and cell type, for your every kind of need be it transport or personal.</p>
+            <button className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">Explore Rentals</button>
+          </div>
+          <div className="w-full lg:w-1/2">
+            {/* Product Slider Placeholder */}
+            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
+              <p className="text-gray-400">[Product Slider]</p>
+            </div>
+          </div>
         </div>
       </section>
-    </>
+
+      {/* Footer */}
+    </div>
   );
-}
+};
+
+export default Page;
