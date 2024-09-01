@@ -57,10 +57,10 @@ const Page = () => {
         <div className="mx-auto w-full px-5 sm:px-10 md:px-12 lg:px-5 relative z-10">
           <div className="text-center flex flex-col items-center space-y-8 md:space-y-10">
             <h2 className="text-4xl md:text-5xl font-bold">
-            Why Choose Humaya Power?
+              Why Choose Humaya Power?
             </h2>
             <p className="text-black text-center max-w-3xl text-lg md:text-xl font-syne">
-            Our unique approach lies in our innovative integration of technology and user-centric services. We extend the lifecycle of Li-ion batteries, transforming the way energy is consumed and conserved. This not only supports environmental sustainability but also propels us towards a greener future together with our community.
+              Our unique approach lies in our innovative integration of technology and user-centric services. We extend the lifecycle of Li-ion batteries, transforming the way energy is consumed and conserved. This not only supports environmental sustainability but also propels us towards a greener future together with our community.
             </p>
           </div>
         </div>
@@ -104,27 +104,36 @@ const Page = () => {
         </div>
       </section>
 
+      <section className="bg-white w-full pt-20 px-5 md:px-12 lg:px-28">
+        <div className="mx-auto w-full px-5 sm:px-10 md:px-12 lg:px-5 relative z-10">
+          <div className="text-center flex flex-col items-center space-y-8 md:space-y-10">
+            <p className="text-black text-center max-w-4xl font-light text-lg md:text-2xl">
+            Get Started with Humaya Power Ready to take a step towards a cleaner, greener planet? Explore our range of products and services designed to cater to your energy needs. Whether you're looking to buy, rent, or simply learn more about sustainable energy, Humaya Power is your partner in this journey.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Call to Action Section */}
       <section className="py-24">
-  <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5">
-    <div className="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl bg-slate-100 dark:from-orange-900">
-      <div className="mx-auto text-center max-w-xl md:max-w-2xl relative space-y-8">
-        <h1 className="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight font-bold text-orange-950 dark:text-white">
-          Ready to Power Your Future with <span className="text-transparent bg-clip-text bg-gradient-to-br from-orange-600 from-20% via-orange-400 via-30% to-orange-600">Sustainable Energy</span> Solutions?
-        </h1>
-        <p className="text-gray-700 dark:text-gray-300">
-          Join us in creating a cleaner, more sustainable world. Together, we can make a difference.
-        </p>
-        <div className="mx-auto max-w-md sm:max-w-xl flex justify-center">
-          <button className="outline-none h-12 px-5 rounded-xl bg-orange-600 text-white flex items-center hover:bg-orange-700 transition duration-300">
-            Contact Us Today
-          </button>
+        <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5">
+          <div className="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl bg-slate-100 dark:from-orange-900">
+            <div className="mx-auto text-center max-w-xl md:max-w-2xl relative space-y-8">
+              <h1 className="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight font-bold text-orange-950 dark:text-white">
+                Ready to Power Your Future with <span className="text-transparent bg-clip-text bg-gradient-to-br from-orange-600 from-20% via-orange-400 via-30% to-orange-600">Sustainable Energy</span> Solutions?
+              </h1>
+              <p className="text-gray-700 dark:text-gray-300">
+                Join us in creating a cleaner, more sustainable world. Together, we can make a difference.
+              </p>
+              <div className="mx-auto max-w-md sm:max-w-xl flex justify-center">
+                <button className="outline-none h-12 px-5 rounded-xl bg-orange-600 text-white flex items-center hover:bg-orange-700 transition duration-300">
+                  Contact Us Today
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
     </>
   );
 };
