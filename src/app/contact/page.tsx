@@ -94,7 +94,7 @@ export default function ContactPage() {
         </motion.div>
       </section>
       
-    <section className="bg-gray-100 dark:bg-gray-900 py-32 sm:py-36 lg:py-40 overflow-hidden min-h-screen flex items-center relative">
+    <section className="bg-gray-100 dark:bg-gray-900 py-20 md:py-30 px-20 overflow-hidden flex items-center relative">
       {/* Background elements */}
       
       <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 z-10">
@@ -104,10 +104,19 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className=" text-4xl md:text-5xl lg:text-6xl/tight xl:text-7xl/tight text-gray-900 dark:text-white font-bold mb-6"
+              className=" text-4xl md:text-5xl/tight mt-12 text-gray-900 dark:text-white font-bold mb-20"
             >
               Let's build an awesome project together!
             </motion.h1>
+            <motion.div 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className=" text-2xl  text-gray-900 dark:text-white font-bold"
+            >
+              Yaha par adress details daal do.
+              address, phone, email, etc.
+            </motion.div>
           </div>
           
           <motion.form 
@@ -115,7 +124,7 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             onSubmit={handleSubmit}
-            className="w-full lg:w-1/2 space-y-4"
+            className="space-y-4 bg-white p-10 shadow-md rounded-lg"
           >
             <div className="flex space-x-4">
               <div className="w-1/2">
@@ -185,7 +194,7 @@ export default function ContactPage() {
             <div>
               <button
                 type="submit"
-                className="w-full px-8 h-12 rounded-md flex items-center justify-center bg-emerald-700 text-white hover:bg-opacity-80 transition-colors duration-300"
+                className="w-full px-8 h-12 rounded-md flex items-center justify-center bg-orange-500 text-white hover:bg-opacity-80 transition-colors duration-300"
               >
                 Send
               </button>
@@ -194,6 +203,7 @@ export default function ContactPage() {
         </div>
       </div>
     </section>
+
     <section className="bg-gray-100 dark:bg-gray-900 py-20 px-4 min-w-max mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
           Frequently Asked Questions
