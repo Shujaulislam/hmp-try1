@@ -89,8 +89,8 @@ export default function ContactPage() {
           initial="initial"
           animate="animate"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">We Are Humaya Power</h1>
-          <p className="text-xl">Powering a sustainable future with innovative energy solutions</p>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Let's Connect</h1>
+          <p className="text-xl">Join us in shaping a sustainable energy future—reach out for collaboration and inquiries.</p>
         </motion.div>
       </section>
       

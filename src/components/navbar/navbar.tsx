@@ -12,73 +12,112 @@ const Navbar = () => {
     const toggleNavbar = () => {
         setOpenNavbar(!openNavbar);
     };
+    const closeNavbar = () => {
+        setOpenNavbar(false);
+    };
+
+    // <ul className="flex flex-col gap-y-5 text-white md:items-center md:flex-row md:gap-x-5 md:h-full md:justify-center md:flex-1">
+    //     <li>
+    //         <Link href="/" className="transition ease-linear hover:text-gray-200" onClick={closeNavbar}>
+    //             Home
+    //         </Link>
+    //     </li>
+    //     <li>
+    //         <Link href="/solutions" className="transition ease-linear hover:text-gray-200" onClick={closeNavbar}>
+    //             Solutions
+    //         </Link>
+    //     </li>
+    //     <li>
+    //         <Link href="/about" className="transition ease-linear hover:text-gray-200" onClick={closeNavbar}>
+    //             About Us
+    //         </Link>
+    //     </li>
+    //     <li>
+    //         <Link href="/contact" className="transition ease-linear hover:text-gray-200" onClick={closeNavbar}>
+    //             Contact Us
+    //         </Link>
+    //     </li>
+    // </ul>
 
     useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollPos = window.scrollY;
+        // This block will only run on the client side
+        if (typeof window !== 'undefined') {
+            let ticking = false;
+            let currentScrollPos = window.scrollY; // Now safely accessed within useEffect
 
-            // Hide navbar when scrolling down by 600 pixels
-            if (currentScrollPos > 600) {
-                setIsNavbarVisible(false);
-            } else {
-                setIsNavbarVisible(true);
-            }
+            const handleScroll = () => {
+                currentScrollPos = window.scrollY;
 
-            // Change background color after scrolling down by 150 pixels
-            if (currentScrollPos > 150) {
-                setNavbarClass('bg-black');
-            } else {
-                setNavbarClass('bg-transparent');
-            }
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        // Hide navbar when scrolling down by 600 pixels
+                        if (currentScrollPos > prevScrollPos && currentScrollPos > 600) {
+                            setIsNavbarVisible(false);
+                        }
 
-            // Show navbar when scrolling up
-            if (currentScrollPos < prevScrollPos && prevScrollPos - currentScrollPos > 200) {
-                setIsNavbarVisible(true);
-            }
+                        // Change background color after scrolling down by 150 pixels
+                        if (currentScrollPos > 100) {
+                            setNavbarClass('bg-black');
+                        } else {
+                            setNavbarClass('bg-transparent');
+                        }
 
-            setPrevScrollPos(currentScrollPos);
-        };
+                        // Show navbar when scrolling up
+                        if (currentScrollPos < prevScrollPos && prevScrollPos - currentScrollPos > 20) {
+                            setIsNavbarVisible(true);
+                        }
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+                        setPrevScrollPos(currentScrollPos); // Update the previous scroll position
+                        ticking = false;
+                    });
+
+                    ticking = true;
+                }
+            };
+
+            window.addEventListener('scroll', handleScroll);
+
+            // Cleanup function to remove event listener
+            return () => window.removeEventListener('scroll', handleScroll);
+        }
     }, [prevScrollPos]);
 
     return (
-        <header className={`fixed top-0 inset-x-0 z-50 h-24 flex items-center transition-all duration-300 ${navbarClass} ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-            <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 h-full items-center">
-                <nav className="flex justify-between items-center h-full">
-                    <div className="flex min-w-max items-center">
-                        <Link href="/" className="flex items-center gap-x-4 text-2xl font-semibold text-white">
-                            <div className="flex items-center -space-x-3 font-semibold">
-                                <Image src="/Logo.svg" alt="logo" width={120} height={120} />
-                            </div>
-                        </Link>
-                    </div>
-                    <div className={`flex flex-col space-y-10 inset-0 fixed top-0  h-[100vh] bg-white dark:bg-gray-950 lg:!bg-transparent py-20 px-5 sm:px-10 md:px-14 transition-all ease-linear duration-300 lg:flex-row lg:flex-1 lg:py-0 lg:px-0 lg:space-y-0 lg:gap-x-10 lg:relative lg:top-0 lg:h-full lg:items-center lg:justify-between lg:w-max ${openNavbar ? "visible opacity-100 translate-y-0" : "-translate-y-9 opacity-0 invisible lg:translate-y-0 lg:visible lg:opacity-100"}`}>
-                        <ul className="flex flex-col gap-y-5 text-white lg:items-center lg:flex-row lg:gap-x-5 lg:h-full lg:justify-center lg:flex-1">
+        <header className={`fixed top-0 inset-x-0 z-50 h-16 md:h-24 flex items-center transition-all duration-300 ${navbarClass} ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+            <div className="md:px-12 lg:px-28 px-5 w-full items-center">
+                <div className="flex justify-between items-center">
+                    <Link href="/">
+                        <Image src="/Logo.svg" alt="logo" width={120} height={120} className="w-24 h-24 md:w-28 md:h-32"/>
+                    </Link>
+                    <nav className={`
+                        flex flex-col items-center text-center inset-0 fixed py-20
+                        dark:bg-gray-950 
+                        transition-all ease-linear duration-300 
+                        md:!bg-transparent md:flex-row md:flex-1 md:py-0 md:px-0 md:space-y-0 md:gap-x-10 md:relative md:justify-between ${openNavbar ? "visible h-screen bg-white text-black opacity-100 translate-y-0" : "text-white -translate-y-9 opacity-0 invisible md:translate-y-0 md:visible md:opacity-100"}`}>
+                        <ul className="flex flex-col gap-y-5 md:items-center md:flex-row md:gap-x-5 md:justify-center md:flex-1">
                             <li>
-                                <Link href="/" className="transition ease-linear hover:text-gray-200">
+                                <Link href="/" onClick={closeNavbar} className="transition ease-linear hover:text-gray-200">
                                     Home
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/solutions" className="transition ease-linear hover:text-gray-200">
+                                <Link href="/solutions" onClick={closeNavbar} className="transition ease-linear hover:text-gray-200">
                                     Solutions
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/about" className="transition ease-linear hover:text-gray-200">
+                                <Link href="/about" onClick={closeNavbar} className="transition ease-linear hover:text-gray-200">
                                     About Us
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/contact" className="transition ease-linear hover:text-gray-200">
+                                <Link href="/contact" onClick={closeNavbar} className="transition ease-linear hover:text-gray-200">
                                     Contact Us
                                 </Link>
                             </li>
                         </ul>
-                        <div className="w-full flex sm:w-max lg:min-w-max lg:items-center">
-                            <Link href="#" className="flex justify-center gap-x-3 items-center text-white hover:text-gray-200 border-b border-white hover:border-gray-200 bg-transparent">
+                        <div className="w-full flex md:w-max md:min-w-max md:items-center">
+                            <Link href="#" className="flex justify-center gap-x-3 items-center text-white hover:text-gray-200 border-b border-white hover:border-gray-200 bg-transparent" onClick={closeNavbar}>
                                 Get in touch
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
@@ -87,18 +126,16 @@ const Navbar = () => {
                                 </span>
                             </Link>
                         </div>
-                    </div>
-                    <div className="flex items-center justify-end relative z-60 lg:hidden">
-                        <button onClick={toggleNavbar} className="p-3 rounded-full bg-emerald-600 dark:bg-emerald-500 outline-none w-12 aspect-square flex flex-col relative justify-center items-center">
-                            <span className="sr-only">
-                                Toggle navbar
-                            </span>
-                            <span className={`w-6 h-0.5 rounded-full bg-gray-300 transition-transform duration-300 ease-linear ${openNavbar ? "translate-y-1.5 rotate-[40deg]" : ""}`} />
-                            <span className={`w-6 origin-center mt-1 h-0.5 rounded-full bg-gray-300 transition-all duration-300 ease-linear ${openNavbar ? "scale-x-0 opacity-0" : ""}`} />
-                            <span className={`w-6 mt-1 h-0.5 rounded-full bg-gray-300 transition-all duration-300 ease-linear ${openNavbar ? "-translate-y-1.5 -rotate-[40deg]" : ""}`} />
-                        </button>
-                    </div>
-                </nav>
+                    </nav>
+                    <button onClick={toggleNavbar} className="p-3 rounded-full bg-transparent md:hidden dark:bg-emerald-500 outline-none w-12 aspect-square flex flex-col relative justify-center items-center">
+                        <span className="sr-only">
+                            Toggle navbar
+                        </span>
+                        <span className={`w-6 h-0.5 rounded-full bg-orange-600 transition-transform duration-300 ease-linear ${openNavbar ? "translate-y-1.5 rotate-[40deg]" : ""}`} />
+                        <span className={`w-6 origin-center mt-1 h-0.5 rounded-full bg-orange-600 transition-all duration-300 ease-linear ${openNavbar ? "scale-x-0 opacity-0" : ""}`} />
+                        <span className={`w-6 mt-1 h-0.5 rounded-full bg-orange-600 transition-all duration-300 ease-linear ${openNavbar ? "-translate-y-1.5 -rotate-[40deg]" : ""}`} />
+                    </button>
+                </div>
             </div>
         </header>
     );

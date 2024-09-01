@@ -14,28 +14,23 @@ const Page = () => {
     <div className="min-h-screen bg-white text-black">
       {/* Header */}
        {/* Hero Section */}
-       <section className="relative text-white pt-32 pb-16">
+       <section className="relative text-white md:pt-32 md:pb-16 pb-10 pt-24">
         <div className="absolute bg-black/60 inset-0 z-0">
-          <Image
-            src="/StoreDot.jpg"
-            alt="Hero Background"
-            layout="fill"
-            objectFit="cover"
-          />
+          <Image src="/StoreDot.jpg" alt="Hero Background" layout="fill" objectFit="cover"/>
         </div>
         <div className="absolute inset-0 bg-black opacity-80 z-10"></div>
         <motion.div
-          className="container mx-auto px-4 text-center relative z-10"
+          className="container mx-auto px-10 text-center relative z-10"
           initial="initial"
           animate="animate"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Explore Our Battery Solutions</h1>
-          <p className="text-xl">Innovative and reliable power solutions for the future of mobility.</p>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Explore Our Battery Solutions</h1>
+          <p className="text-base md:text-xl">Innovative and reliable power solutions for the future of mobility.</p>
         </motion.div>
       </section>
 
       {/* Products and Solutions Section */}
-      <section className="py-24 px-32 ">
+      <section className="pt-10 pb-0 md:py-24 px-10 md:px-32 *:mb-20 *:*:mx-10 last:-mb-10">
         {/* Battery Swap Station Partnership */}
         <div className="flex flex-col lg:flex-row items-center gap-8 ">
           <div className="w-full lg:w-1/2">

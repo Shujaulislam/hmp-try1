@@ -31,10 +31,10 @@ const footerItems = [
  
 const FooterBlock = () => {
 return (
-    <footer className="footer footer-center bg-emerald-600 text-base-content p-4">
+    <footer className="footer footer-center text-center text-white bg-black text-base-content p-4">
   <aside className="flex justify-center">
     <p>
-        Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+        Copyright © {new Date().getFullYear()} - All right reserved by <br className="md:hidden" /> <span className="text-orange-500 md:hover:text-orange-500 md:text-white"> Humaya Power </span></p>
   </aside>
 </footer>
 )
