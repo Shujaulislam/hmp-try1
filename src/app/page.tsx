@@ -48,7 +48,7 @@ const Page = () => {
               Energize Your World, Sustainably
             </h2>
              <p className="text-gray-300 text-center max-w-2xl text-lg md:text-xl font-syne">
-              At Humaya Power, we don't just offer energy solutions; we redefine them. Our commitment is to revolutionize the sustainable energy landscape by making high-quality, eco-friendly energy options accessible and affordable for everyone.
+              At Humaya Power, we don&apos;t just offer energy solutions; we redefine them. Our commitment is to revolutionize the sustainable energy landscape by making high-quality, eco-friendly energy options accessible and affordable for everyone.
             </p>
           </div>
         </div>
@@ -111,7 +111,7 @@ const Page = () => {
         <div className="mx-auto w-full px-5 sm:px-10 md:px-12 lg:px-5 relative z-10">
           <div className="text-center flex flex-col items-center space-y-8 md:space-y-10">
             <p className="text-black text-center max-w-4xl font-light text-lg md:text-2xl">
-            Get Started with Humaya Power Ready to take a step towards a cleaner, greener planet? Explore our range of products and services designed to cater to your energy needs. Whether you're looking to buy, rent, or simply learn more about sustainable energy, Humaya Power is your partner in this journey.
+            Get Started with Humaya Power Ready to take a step towards a cleaner, greener planet? Explore our range of products and services designed to cater to your energy needs. Whether you&apos;re looking to buy, rent, or simply learn more about sustainable energy, Humaya Power is your partner in this journey.
             </p>
           </div>
         </div>

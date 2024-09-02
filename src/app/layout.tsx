@@ -16,6 +16,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="en">
    <body className={`${syne.className} ${roboto.className} ${montserrat.className} ${nunito.className} ${inter.className}`}>

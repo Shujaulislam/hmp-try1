@@ -12,10 +12,11 @@ const fadeIn = {
 };
 
 export default function ContactPage() {
+  {/* Replace unescaped characters in FAQData */ }
   const FAQData = [
     {
       question: "What are some random questions to ask?",
-      answer: "Some random questions could be: 'If you could have dinner with any historical figure, who would it be?', 'What's the most unusual thing you've ever eaten?', or 'If you could instantly become an expert in one subject, what would it be?'"
+      answer: "Some random questions could be: &apos;If you could have dinner with any historical figure, who would it be?&apos;, &apos;What&apos;s the most unusual thing you&apos;ve ever eaten?&apos;, or &apos;If you could instantly become an expert in one subject, what would it be?&apos;"
     },
     {
       question: "Do you include common questions?",
@@ -31,13 +32,14 @@ export default function ContactPage() {
     },
     {
       question: "What do you wish you had more talent doing?",
-      answer: "This is actually one of our questions! It's a great way to learn about someone's aspirations and interests."
+      answer: "This is actually one of our questions! It&apos;s a great way to learn about someone&apos;s aspirations and interests."
     }
   ];
 
+
   function FAQItem({ question, answer }: { question: string; answer: string }) {
     const [isOpen, setIsOpen] = useState(false);
-  
+
     return (
       <div className="border-b border-gray-200 py-4">
         <button
@@ -51,7 +53,7 @@ export default function ContactPage() {
       </div>
     );
   }
-  
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -73,23 +75,23 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative text-white pt-32 pb-16">
+      <section className="relative text-white md:pt-32 md:pb-16 pb-10 pt-24">
         <div className="absolute bg-black/60 inset-0 z-0">
-          <Image
-            src="/StoreDot.jpg"
-            alt="Hero Background"
+          <Image 
+            src="/StoreDot.jpg" 
+            alt="Hero Background"  
             fill
             className="object-cover"
           />
         </div>
         <div className="absolute inset-0 bg-black opacity-80 z-10"></div>
         <motion.div
-          className="container mx-auto px-4 text-center relative z-10"
+          className="container mx-auto px-4 sm:px-10 text-center relative z-10"
           initial="initial"
           animate="animate"
         >
-          <h1 className={`${syne.className} text-4xl sm:text-5xl md:text-6xl font-bold mb-4`}>Let's Connect</h1>
-          <p className={`${syne.className} text-lg sm:text-xl`}>Join us in shaping a sustainable energy future—reach out for collaboration and inquiries.</p>
+          <h1 className={`${syne.className} text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6`}>Let&apos;s Connect</h1>
+          <p className="text-sm sm:text-base md:text-xl">Join us in shaping a sustainable energy future—reach out for collaboration and inquiries.</p>
         </motion.div>
       </section>
 
@@ -99,15 +101,15 @@ export default function ContactPage() {
           <div className="flex flex-col lg:flex-row items-center lg:items-start space-y-10 lg:space-y-0 lg:space-x-20">
             {/* Address Section */}
             <div className="lg:w-1/2 text-left mb-10 lg:mb-0">
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 className={`${syne.className} text-3xl sm:text-4xl mt-6 text-gray-900 dark:text-white font-bold mb-8 text-center`}
               >
-                Let's build an awesome project together!
+                Let&apos;s build an awesome project together!
               </motion.h2>
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -124,9 +126,9 @@ export default function ContactPage() {
                 </div>
               </motion.div>
             </div>
-            
+
             {/* Original Contact Form */}
-            <motion.form 
+            <motion.form
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -217,20 +219,20 @@ export default function ContactPage() {
           Our Location
         </h2>
         <div className="max-w-6xl mx-auto overflow-hidden rounded-lg shadow-lg">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13997.934401935903!2d77.2676032!3d28.7050902!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd3aef2a99e3%3A0xc399e40fcdf3391b!2sHumaya%20Power!5e0!3m2!1sen!2sin!4v1725256686545!5m2!1sen!2sin" 
-            width="100%" 
-            height="450" 
-            style={{border:0}} 
-            allowFullScreen={false} 
-            loading="lazy" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13997.934401935903!2d77.2676032!3d28.7050902!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd3aef2a99e3%3A0xc399e40fcdf3391b!2sHumaya%20Power!5e0!3m2!1sen!2sin!4v1725256686545!5m2!1sen!2sin"
+            width="100%"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen={false}
+            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-gray-100 dark:bg-gray-900 py-10 sm:py-20 px-4 min-w-max mx-auto">
+      {/* <section className="bg-gray-100 dark:bg-gray-900 py-10 sm:py-20 px-4 min-w-max mx-auto">
         <h2 className={`${syne.className} text-3xl md:text-4xl font-bold mb-6 text-center text-gray-900 dark:text-white`}>
           Frequently Asked Questions
         </h2>
@@ -244,7 +246,7 @@ export default function ContactPage() {
             <FAQItem key={index} question={item.question} answer={item.answer} />
           ))}
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

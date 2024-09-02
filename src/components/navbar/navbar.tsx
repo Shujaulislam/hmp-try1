@@ -16,29 +16,6 @@ const Navbar = () => {
         setOpenNavbar(false);
     };
 
-    // <ul className="flex flex-col gap-y-5 text-white md:items-center md:flex-row md:gap-x-5 md:h-full md:justify-center md:flex-1">
-    //     <li>
-    //         <Link href="/" className="transition ease-linear hover:text-gray-200" onClick={closeNavbar}>
-    //             Home
-    //         </Link>
-    //     </li>
-    //     <li>
-    //         <Link href="/solutions" className="transition ease-linear hover:text-gray-200" onClick={closeNavbar}>
-    //             Solutions
-    //         </Link>
-    //     </li>
-    //     <li>
-    //         <Link href="/about" className="transition ease-linear hover:text-gray-200" onClick={closeNavbar}>
-    //             About Us
-    //         </Link>
-    //     </li>
-    //     <li>
-    //         <Link href="/contact" className="transition ease-linear hover:text-gray-200" onClick={closeNavbar}>
-    //             Contact Us
-    //         </Link>
-    //     </li>
-    // </ul>
-
     useEffect(() => {
         // This block will only run on the client side
         if (typeof window !== 'undefined') {
@@ -87,7 +64,7 @@ const Navbar = () => {
             <div className="md:px-12 lg:px-28 px-5 w-full items-center">
                 <div className="flex justify-between items-center">
                     <Link href="/">
-                        <Image src="/Logo.svg" alt="logo" width={120} height={120} className="w-24 h-24 md:w-28 md:h-32"/>
+                        <Image src="/Logo.png" alt="logo" width={100} height={100} className="w-20 h-10 md:w-28 md:h-14"/>
                     </Link>
                     <nav className={`
                         flex flex-col items-center text-center inset-0 fixed py-20

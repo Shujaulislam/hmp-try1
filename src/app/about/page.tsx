@@ -18,26 +18,27 @@ export default function AboutUs() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative text-white pt-32 pb-16">
+      
+      <section className="relative text-white md:pt-32 md:pb-16 pb-10 pt-24">
         <div className="absolute bg-black/60 inset-0 z-0">
-          <Image
-            src="/StoreDot.jpg"
-            alt="Hero Background"
+          <Image 
+            src="/StoreDot.jpg" 
+            alt="Hero Background"  
             fill
             className="object-cover"
           />
         </div>
         <div className="absolute inset-0 bg-black opacity-80 z-10"></div>
         <motion.div
-          className="container mx-auto px-4 text-center relative z-10"
+          className="container mx-auto px-4 sm:px-10 text-center relative z-10"
           initial="initial"
           animate="animate"
         >
-          <h1 className={`${syne.className} text-5xl md:text-6xl font-bold mb-6`}>
-            We Are Humaya Power</h1>
-          <p className="text-xl">Powering a sustainable future with innovative energy solutions</p>
+          <h1 className={`${syne.className} text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6`}>We Are Humaya Power</h1>
+          <p className="text-sm sm:text-base md:text-xl">Powering a sustainable future with innovative energy solutions</p>
         </motion.div>
       </section>
+      
       {/* History Section */}
       <section className="py-24 bg-slate-100">
         <div className="container mx-auto pl-4">
