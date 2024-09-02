@@ -117,7 +117,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                         <div className="w-full flex md:w-max md:min-w-max md:items-center">
-                            <Link href="#" className="flex justify-center gap-x-3 items-center text-white hover:text-gray-200 border-b border-white hover:border-gray-200 bg-transparent" onClick={closeNavbar}>
+                            <Link href="/contact" className="flex justify-center gap-x-3 items-center text-white hover:text-gray-200 border-b border-white hover:border-gray-200 bg-transparent" onClick={closeNavbar}>
                                 Get in touch
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">

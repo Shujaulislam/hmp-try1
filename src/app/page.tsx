@@ -129,9 +129,11 @@ const Page = () => {
                 Join us in creating a cleaner, more sustainable world. Together, we can make a difference.
               </p>
               <div className="mx-auto max-w-md sm:max-w-xl flex justify-center">
-                <button className="outline-none h-12 px-5 rounded-xl bg-orange-600 text-white flex items-center hover:bg-orange-700 transition duration-300">
-                  Contact Us Today
-                </button>
+                <Link href="/contact">
+                  <button className="outline-none h-12 px-5 rounded-xl bg-orange-600 text-white flex items-center hover:bg-orange-700 transition duration-300">
+                    Contact Us Today
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
