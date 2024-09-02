@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { syne } from '../font';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -28,7 +29,7 @@ const Page = () => {
           initial="initial"
           animate="animate"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Explore Our Battery Solutions</h1>
+          <h1 className={`${syne.className} text-4xl md:text-6xl font-bold mb-6`}>Explore Our Battery Solutions</h1>
           <p className="text-base md:text-xl">Innovative and reliable power solutions for the future of mobility.</p>
         </motion.div>
       </section>

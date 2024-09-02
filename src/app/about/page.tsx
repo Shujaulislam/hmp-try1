@@ -2,9 +2,11 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { syne } from '../font';
-import { Router } from 'next/router';
+import { montserrat, syne } from '../font';
 import Link from 'next/link';
+import { FcInTransit,FcElectricity } from 'react-icons/fc';
+import { GiModernCity } from "react-icons/gi";
+import { FaCity } from 'react-icons/fa';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -31,7 +33,8 @@ export default function AboutUs() {
           initial="initial"
           animate="animate"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">We Are Humaya Power</h1>
+          <h1 className={`${syne.className} text-5xl md:text-6xl font-bold mb-6`}>
+            We Are Humaya Power</h1>
           <p className="text-xl">Powering a sustainable future with innovative energy solutions</p>
         </motion.div>
       </section>
@@ -53,7 +56,7 @@ export default function AboutUs() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <p className="text-gray-700 mb-6 text-lg font-light leading-8">
+              <p className="text-gray-700 mb-6 text-lg font-normal leading-8">
                 Our journey began with a vision to revolutionise the way energy resources are used and preserved. Witnessing the wasteful crushing and recycling processes of damaged batteries, our founders were driven to create a more sustainable solution.
               </p>
               <p className="text-gray-700 text-lg">
@@ -71,7 +74,7 @@ export default function AboutUs() {
             <Image src="/swap-station.jpg" alt="working on housing" width={1300} height={900} className="w-full md:h-full object-cover rounded-lg" />
           </div>
           <div className="md:w-1/2 lg:w-[54%] space-y-12 text-gray-700 dark:text-gray-300">
-            <h1 className="text-gray-900 dark:text-white font-semibold text-2xl sm:text-3xl md:text-4xl">
+            <h1 className={`${syne.className} text-gray-900 dark:text-white font-semibold text-2xl sm:text-3xl md:text-4xl`}>
               We help drive your business forward faster
             </h1>
             <p>
@@ -110,47 +113,42 @@ export default function AboutUs() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5 space-y-10">
           <div className="text-center space-y-6 max-w-2xl mx-auto">
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white capitalize">Our Impact</h1>
+            <h1 className={`${syne.className} text-3xl font-bold text-gray-900 dark:text-white capitalize`}>
+              Our Impact</h1>
             <p className="text-gray-700 dark:text-gray-300">
               Driving Change, One Battery at a Time. Humaya Power stands at the forefront of environmental sustainability by maximising the lifecycle of Li-ion batteries. Our efforts extend the usability of these batteries, making them a safer and more cost-effective alternative to lead-acid batteries.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-            <div className="p-5 md:p-6 rounded-lg bg-gray-100 dark:bg-gray-900 space-y-4">
+            <div className="p-6 md:p-7 rounded-lg shadow-lg hover:shadow-xl transition-shadow bg-white dark:bg-gray-900 space-y-4">  {/*bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow */}
               <div className="flex items-center gap-4 text-gray-900 dark:text-white">
                 <span className="p-2 rounded-full bg-gray-200 dark:bg-gray-800">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
-                  </svg>
+                <FcInTransit className="w-6 h-6" />
                 </span>
-                <h2 className="font-bold text-2xl">1 Million+ KM</h2>
+                <h2 className={`${syne.className} font-bold text-2xl`}>1 Million+ KM</h2>
               </div>
               <p className="text-gray-700 dark:text-gray-300">
                 Distance driven using our recycled Li-ion batteries.
               </p>
             </div>
-            <div className="p-5 md:p-6 rounded-lg bg-gray-100 dark:bg-gray-900 space-y-4">
+            <div className="p-6 md:p-7 rounded-lg shadow-lg hover:shadow-xl transition-shadow bg-white dark:bg-gray-900 space-y-4">
               <div className="flex items-center gap-4 text-gray-900 dark:text-white">
                 <span className="p-2 rounded-full bg-gray-200 dark:bg-gray-800">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                  </svg>
+                {/* <GiModernCity className="bg-pink-400"/> */}
+                <FaCity className=" text-orange-500 w-5 h-5 " />
                 </span>
-                <h2 className="font-syne font-bold text-2xl">10+ Cities</h2>
+                <h2 className={`${syne.className} font-bold text-2xl`}>10+ Cities</h2>
               </div>
               <p className="text-gray-700 dark:text-gray-300">
                 Our reach has expanded across numerous cities, bringing sustainable energy solutions to a wider audience.
               </p>
             </div>
-            <div className="p-5 md:p-6 rounded-lg bg-gray-100 dark:bg-gray-900 space-y-4">
+            <div className="p-6 md:p-7 rounded-lg shadow-lg hover:shadow-xl transition-shadow bg-white dark:bg-gray-900 space-y-4">
               <div className="flex items-center gap-4 text-gray-900 dark:text-white">
                 <span className="p-2 rounded-full bg-gray-200 dark:bg-gray-800">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                  </svg>
+                <FcElectricity className="w-5 h-5" />
                 </span>
-                <h2 className="font-bold text-2xl">5 Partnered Swap Stations</h2>
+                <h2 className={`${syne.className} font-bold text-2xl`}>5 Partnered Swap Stations</h2>
               </div>
               <p className="text-gray-700 dark:text-gray-300">
                 Established across India, enhancing accessibility to energy-efficient options.
@@ -195,7 +193,7 @@ export default function AboutUs() {
       <section className="py-24 bg-slate-100">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-4xl font-bold mb-12 text-center text-gray-800"
+            className={`${syne.className} text-4xl font-bold mb-12 text-center text-gray-800`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}

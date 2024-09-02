@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
-import { syne } from '../font';
+import { montserrat, nunito, syne } from '../font';
 
 
 const fadeIn = {
@@ -93,7 +93,7 @@ export default function ContactPage() {
           initial="initial"
           animate="animate"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Let's Connect</h1>
+          <h1 className={`${syne.className} text-5xl md:text-6xl font-bold mb-6`}>Let's Connect</h1>
           <p className={`${syne.className} text-xl`}>Join us in shaping a sustainable energy future—reach out for collaboration and inquiries.</p>
         </motion.div>
       </section>
@@ -108,7 +108,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className=" text-4xl md:text-5xl/tight mt-12 text-gray-900 dark:text-white font-bold mb-20"
+              className={`${syne.className}  text-4xl md:text-5xl/tight mt-12 text-gray-900 dark:text-white font-bold mb-20`}
             >
               Let's build an awesome project together!
             </motion.h1>
@@ -116,7 +116,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className=" text-2xl  text-gray-900 dark:text-white font-bold"
+              className={`${nunito.className} text-2xl  text-gray-900 dark:text-white font-bold`}
             >
               <p><FaMapMarkerAlt className="inline-block mr-2" />E-153, Gali No. 2, Chand Bagh, New Mustafabad, New Delhi, Delhi, 110094</p>
               <p><FaPhoneAlt className="inline-block mr-2" />(+91) 729-1000-560</p>
@@ -229,7 +229,7 @@ export default function ContactPage() {
     </section>
 
     <section className="bg-gray-100 dark:bg-gray-900 py-20 px-4 min-w-max mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+        <h2 className={`${syne.className} text-3xl md:text-4xl font-bold mb-6 text-center`}>
           Frequently Asked Questions
         </h2>
         <div className="max-w-2xl mx-auto mb-12">

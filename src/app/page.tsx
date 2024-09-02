@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { FaSolarPanel, FaBatteryFull, FaLeaf, FaCity } from 'react-icons/fa';
 import { FcInTransit, FcBusinessman } from "react-icons/fc";
+import { montserrat, syne } from './font';
 
 const Page = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -43,10 +44,10 @@ const Page = () => {
       <section className="bg-slate-900 w-full py-20 md:py-32 px-5 md:px-12 lg:px-28">
         <div className="mx-auto w-full px-5 sm:px-10 md:px-12 lg:px-5 relative z-10">
           <div className="text-center flex flex-col items-center space-y-8 md:space-y-10">
-            <h2 className="text-4xl md:text-5xl text-white font-bold">
+            <h2 className={`${syne.className} text-4xl md:text-5xl text-white font-bold`}>
               Energize Your World, Sustainably
             </h2>
-            <p className="text-gray-300 text-center max-w-2xl text-lg md:text-xl font-syne">
+             <p className="text-gray-300 text-center max-w-2xl text-lg md:text-xl font-syne">
               At Humaya Power, we don't just offer energy solutions; we redefine them. Our commitment is to revolutionize the sustainable energy landscape by making high-quality, eco-friendly energy options accessible and affordable for everyone.
             </p>
           </div>
@@ -57,7 +58,8 @@ const Page = () => {
       <section className="bg-gradient-to-b from-white to-gray-100 w-full py-20 px-5 md:px-12 lg:px-28">
         <div className="mx-auto w-full px-5 sm:px-10 md:px-12 lg:px-5 relative z-10">
           <div className="text-center flex flex-col items-center space-y-8 md:space-y-10">
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <h2 className={`${syne.className} text-4xl md:text-5xl font-bold`}
+            >
               Why Choose Humaya Power?
             </h2>
             <p className="text-black text-center max-w-3xl text-lg md:text-xl font-syne">
