@@ -3,6 +3,8 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { syne } from '../font';
+import { Router } from 'next/router';
+import Link from 'next/link';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -19,8 +21,8 @@ export default function AboutUs() {
           <Image
             src="/StoreDot.jpg"
             alt="Hero Background"
-            layout="fill"
-            objectFit="cover"
+            fill
+            className="object-cover"
           />
         </div>
         <div className="absolute inset-0 bg-black opacity-80 z-10"></div>
@@ -34,7 +36,7 @@ export default function AboutUs() {
         </motion.div>
       </section>
       {/* History Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-slate-100">
         <div className="container mx-auto pl-4">
           <div className="flex flex-col md:flex-row items-center">
             <motion.div
@@ -66,7 +68,7 @@ export default function AboutUs() {
       <section className="py-24 bg-slate-100">
         <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5 flex flex-col md:flex-row gap-16">
           <div className="flex md:flex-1">
-            <Image src="/Background2.png" alt="working on housing" width={1300} height={900} className="w-full md:h-full object-cover rounded-lg" />
+            <Image src="/swap-station.jpg" alt="working on housing" width={1300} height={900} className="w-full md:h-full object-cover rounded-lg" />
           </div>
           <div className="md:w-1/2 lg:w-[54%] space-y-12 text-gray-700 dark:text-gray-300">
             <h1 className="text-gray-900 dark:text-white font-semibold text-2xl sm:text-3xl md:text-4xl">
@@ -190,7 +192,7 @@ export default function AboutUs() {
       </section>
 
       {/* Community Engagement Section */}
-      <section className="py-24 bg-gray-100">
+      <section className="py-24 bg-slate-100">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-4xl font-bold mb-12 text-center text-gray-800"
@@ -207,7 +209,7 @@ export default function AboutUs() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Image src="/community-image.jpg" alt="Community Engagement" width={500} height={300} className="rounded-lg shadow-xl" />
+              <Image src="/swap-station.jpg" alt="Community Engagement" width={500} height={300} className="rounded-lg shadow-xl" />
             </motion.div>
             <motion.div
               className="md:w-1/2 md:pl-12"
@@ -235,9 +237,12 @@ export default function AboutUs() {
           Join us in creating a cleaner, more sustainable world. Together, we can make a difference.
         </p>
         <div className="mx-auto max-w-md sm:max-w-xl flex justify-center">
-          <button className="outline-none h-12 px-5 rounded-xl bg-orange-600 text-white flex items-center hover:bg-orange-700 transition duration-300">
+          <Link 
+          href="/contact"
+          className="outline-none h-12 px-5 rounded-xl bg-orange-600 text-white flex items-center hover:bg-orange-700 transition duration-300"
+           >
             Contact Us Today
-          </button>
+          </Link>
         </div>
       </div>
     </div>

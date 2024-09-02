@@ -53,6 +53,7 @@ const Page = () => {
         </div>
       </section>
 
+
       <section className="bg-gradient-to-b from-white to-gray-100 w-full py-20 px-5 md:px-12 lg:px-28">
         <div className="mx-auto w-full px-5 sm:px-10 md:px-12 lg:px-5 relative z-10">
           <div className="text-center flex flex-col items-center space-y-8 md:space-y-10">

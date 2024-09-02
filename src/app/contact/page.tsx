@@ -1,7 +1,9 @@
 "use client"
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import { syne } from '../font';
 
 
 const fadeIn = {
@@ -79,9 +81,11 @@ export default function ContactPage() {
           <Image
             src="/StoreDot.jpg"
             alt="Hero Background"
-            layout="fill"
-            objectFit="cover"
-          />
+             fill
+            className="object-cover"
+            // width={2000}
+            // height={2000}
+            />
         </div>
         <div className="absolute inset-0 bg-black opacity-80 z-10"></div>
         <motion.div
@@ -90,7 +94,7 @@ export default function ContactPage() {
           animate="animate"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Let's Connect</h1>
-          <p className="text-xl">Join us in shaping a sustainable energy future—reach out for collaboration and inquiries.</p>
+          <p className={`${syne.className} text-xl`}>Join us in shaping a sustainable energy future—reach out for collaboration and inquiries.</p>
         </motion.div>
       </section>
       
@@ -114,8 +118,9 @@ export default function ContactPage() {
               transition={{ duration: 0.5 }}
               className=" text-2xl  text-gray-900 dark:text-white font-bold"
             >
-              Yaha par adress details daal do.
-              address, phone, email, etc.
+              <p><FaMapMarkerAlt className="inline-block mr-2" />E-153, Gali No. 2, Chand Bagh, New Mustafabad, New Delhi, Delhi, 110094</p>
+              <p><FaPhoneAlt className="inline-block mr-2" />(+91) 729-1000-560</p>
+              <p><FaEnvelope className="inline-block mr-2" />info@humayapower.in</p>
             </motion.div>
           </div>
           
@@ -201,6 +206,25 @@ export default function ContactPage() {
             </div>
           </motion.form>
         </div>
+      </div>
+    </section>
+
+{/*Google map iframe */}
+
+     <section className="bg-gray-100 dark:bg-gray-900 py-20 px-4 min-w-max mx-auto">
+      <h2 className={`${syne.className} text-3xl md:text-4xl font-bold mb-6 text-center text-gray-900 dark:text-white`}>
+        Our Location
+      </h2>
+      <div className="max-w-6xl mx-auto overflow-hidden rounded-lg shadow-lg">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13997.934401935903!2d77.2676032!3d28.7050902!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd3aef2a99e3%3A0xc399e40fcdf3391b!2sHumaya%20Power!5e0!3m2!1sen!2sin!4v1725256686545!5m2!1sen!2sin" 
+      width="1200" 
+      height="450" 
+      style={{border:0}} 
+      allowFullScreen={false} 
+      loading="lazy" 
+      referrerPolicy="no-referrer-when-downgrade">
+        
+      </iframe>
       </div>
     </section>
 

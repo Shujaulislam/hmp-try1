@@ -16,7 +16,11 @@ const Page = () => {
        {/* Hero Section */}
        <section className="relative text-white md:pt-32 md:pb-16 pb-10 pt-24">
         <div className="absolute bg-black/60 inset-0 z-0">
-          <Image src="/StoreDot.jpg" alt="Hero Background" layout="fill" objectFit="cover"/>
+          <Image src="/StoreDot.jpg" 
+          alt="Hero Background"  
+          fill
+          className="object-cover"
+          />
         </div>
         <div className="absolute inset-0 bg-black opacity-80 z-10"></div>
         <motion.div
@@ -41,7 +45,13 @@ const Page = () => {
           <div className="w-full lg:w-1/2">
             {/* Animated Infographic Placeholder */}
             <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
-              <p className="text-gray-400">[Infographic or Animation]</p>
+              <Image
+              src="/swap-station.jpeg"
+              alt='swap-station image'
+              width={256}
+              height={256}
+              className="object-contain"
+               />
             </div>
           </div>
         </div>
@@ -56,7 +66,13 @@ const Page = () => {
           <div className="w-full lg:w-1/2">
             {/* Product Slider Placeholder */}
             <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
-              <p className="text-gray-400">[Product Slider]</p>
+            <Image
+            src="/battery-rental.jpeg"
+            alt="rental-battery image"
+            width={256}
+            height={256}
+            className="object-contain"
+        />
             </div>
           </div>
         </div>
@@ -71,7 +87,13 @@ const Page = () => {
           <div className="w-full lg:w-1/2">
             {/* Animated Icons Placeholder */}
             <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
-              <p className="text-gray-400">[Animated Icons]</p>
+            <Image
+            src="/EVbattery.png"
+            alt="ev battery image"
+            width={256}
+            height={256}
+            className="object-contain"
+              />
             </div>
           </div>
         </div>
@@ -87,11 +109,14 @@ const Page = () => {
             {/* Grid Layout for Images and Details */}
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-gray-100 rounded-lg h-32 flex items-center justify-center">
-                <p className="text-gray-400">[Image]</p>
-              </div>
-              <div className="bg-gray-100 rounded-lg h-32 flex items-center justify-center">
-                <p className="text-gray-400">[Image]</p>
-              </div>
+              <Image
+            src="/storage-battery.jpeg"
+            alt="rental-battery image"
+            width={256}
+            height={256}
+            className="object-contain"
+              />
+            </div>
             </div>
           </div>
         </div>
@@ -106,7 +131,20 @@ const Page = () => {
           <div className="w-full lg:w-1/2">
             {/* Product Slider Placeholder */}
             <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
-              <p className="text-gray-400">[Product Slider]</p>
+            <Image
+            src="/custom-battery-1.jpeg"
+            alt="rental-battery image"
+            width={256}
+            height={256}
+            className="object-contain"
+              />
+              <Image
+            src="/custom-battery-2.jpeg"
+            alt="rental-battery image"
+            width={256}
+            height={256}
+            className="object-contain"
+              />
             </div>
           </div>
         </div>
