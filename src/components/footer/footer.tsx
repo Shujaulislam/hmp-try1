@@ -3,31 +3,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
-const FooterItem = ({ text, link }: { text: string; link: string }) => {
-  return (
-    <li>
-      <Link href={link}>{text}</Link>
-    </li>
-  );
-};
 
-const footerItems = [
-  {
-    id: 1,
-    text: "Term of services",
-    link: "#",
-  },
-  {
-    id: 2,
-    text: "Company",
-    link: "#",
-  },
-  {
-    id: 3,
-    text: "Portfolio",
-    link: "#",
-  },
-];
 
 const FooterBlock = () => {
   const [footerClass, setFooterClass] = useState("bg-transparent");
@@ -75,6 +51,13 @@ const FooterBlock = () => {
         </p>
         <div className="flex space-x-4">
           <Link
+            href="/policies"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Policies
+          </Link>
+          <Link
             href="https://www.instagram.com/humayapower?igsh=NTc4MTIwNjQ2YQ=="
             target="_blank"
             rel="noopener noreferrer"
@@ -87,6 +70,13 @@ const FooterBlock = () => {
             rel="noopener noreferrer"
           >
             <FaLinkedin className="text-white hover:text-gray-400" size={24} />
+          </Link>
+          <Link
+            href="/T&C"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Terms & Conditions
           </Link>
         </div>
       </aside>

@@ -2,6 +2,9 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { EffectLink } from '../EffectLink';
+
+
 
 const Navbar = () => {
     const [openNavbar, setOpenNavbar] = useState(false);
@@ -32,7 +35,7 @@ const Navbar = () => {
                             setIsNavbarVisible(false);
                         }
 
-                        // Change background color after scrolling down by 150 pixels
+                        // Change background color after scrolling down by 100 pixels
                         if (currentScrollPos > 100) {
                             setNavbarClass('bg-black');
                         } else {
@@ -67,10 +70,10 @@ const Navbar = () => {
                         <Image src="/Logo.png" alt="logo" width={100} height={100} className="w-20 h-10 md:w-28 md:h-14"/>
                     </Link>
                     <nav className={`
-                        flex flex-col items-center text-center inset-0 fixed py-20
-                        dark:bg-gray-950 
-                        transition-all ease-linear duration-300 
-                        md:!bg-transparent md:flex-row md:flex-1 md:py-0 md:px-0 md:space-y-0 md:gap-x-10 md:relative md:justify-between ${openNavbar ? "visible h-screen bg-white text-black opacity-100 translate-y-0" : "text-white -translate-y-9 opacity-0 invisible md:translate-y-0 md:visible md:opacity-100"}`}>
+                        flex flex-col items-center text-center inset-0 fixed py-20 dark:bg-gray-950 transition-all ease-linear duration-300 
+                        md:!bg-transparent md:flex-row md:flex-1 md:py-0 md:px-0 md:space-y-0 md:gap-x-10 md:relative md:justify-between 
+                        ${openNavbar ? "visible h-screen bg-white text-black opacity-100 translate-y-0"
+                         : "text-white -translate-y-9 opacity-0 invisible md:translate-y-0 md:visible md:opacity-100"}`}>
                         <ul className="flex flex-col gap-y-5 md:items-center md:flex-row md:gap-x-5 md:justify-center md:flex-1">
                             <li>
                                 <Link href="/" onClick={closeNavbar} className="transition ease-linear hover:text-gray-200">
@@ -88,13 +91,14 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/contact" onClick={closeNavbar} className="transition ease-linear hover:text-gray-200">
+                                <EffectLink href="/contact" onClick={closeNavbar} className="transition ease-linear hover:text-gray-200">
                                     Contact Us
-                                </Link>
+                                </EffectLink>
                             </li>
                         </ul>
                         <div className="w-full flex md:w-max md:min-w-max md:items-center">
-                            <Link href="/contact" className="flex justify-center gap-x-3 items-center text-white hover:text-gray-200 border-b border-white hover:border-gray-200 bg-transparent" onClick={closeNavbar}>
+                            <Link href="/contact" className="flex justify-center gap-x-3 items-center text-white hover:text-gray-200 border-b border-white hover:border-gray-200 bg-transparent" 
+                            onClick={closeNavbar}>
                                 Get in touch
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
