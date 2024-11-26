@@ -65,7 +65,7 @@ const FooterBlock = () => {
             <FaLinkedin className="text-white hover:text-blue-500" size={24} />
           </Link>
           <Link
-            href="/T&C"
+            href="/Terms"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-orange-500 md:hover:text-orange-500 md:text-white"

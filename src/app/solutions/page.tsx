@@ -5,11 +5,6 @@ import { motion } from 'framer-motion';
 import { syne } from '../font';
 import Link from 'next/link';
 
-const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-};
 
 const Page = () => {
   return (
@@ -35,8 +30,8 @@ const Page = () => {
         </motion.div>
       </section>
 
-      {/* Products and Solutions Section */}
-      <section className="pt-8 sm:pt-10 pb-0 md:py-24 px-4 sm:px-10 md:px-48 mb-20">
+     {/* Products and Solutions Section */}
+     <section className="pt-8 sm:pt-10 pb-0 md:py-24 px-4 sm:px-10 md:px-48 mb-20">
         {/* Battery Swap Station Partnership */}
         <div className="flex flex-col lg:flex-row items-center gap-8 mb-16 lg:items-center">
           <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -60,8 +55,10 @@ const Page = () => {
           <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <h2 className="text-2xl sm:text-3xl font-semibold text-orange-600 mb-4">Rental Batteries for EV Drivers</h2>
             <p className="text-gray-700 mb-4">Affordable rental battery solutions for electric vehicle drivers, ensuring uninterrupted journeys.</p>
-            <p className="text-gray-700 mb-4 font-bold">₹3000/month</p>
-            <button className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">Explore Rentals</button>
+            <p className="text-gray-700 mb-4 font-bold">₹3,000/month</p>
+            <button className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">
+            <Link href="/solutions/rentals">Explore Rentals</Link>
+            </button>
           </div>
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
             <Image
@@ -79,8 +76,10 @@ const Page = () => {
           <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <h2 className="text-2xl sm:text-3xl font-semibold text-orange-600 mb-4">Li-ion EV Batteries</h2>
             <p className="text-gray-700 mb-4">High-performance Li-ion batteries for electric vehicles, designed for maximum efficiency and durability.</p>
-            <p className="text-gray-700 mb-4">₹30000</p>
-            <button className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">Discover EV Batteries</button>
+            <p className="text-gray-700 mb-4 font-bold">₹30,000</p>
+            <button className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">
+            <Link href="/solutions/evbatteries">Discover EV Batteries</Link>
+            </button>
           </div>
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
             <Image
@@ -98,7 +97,8 @@ const Page = () => {
           <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <h2 className="text-2xl sm:text-3xl font-semibold text-orange-600 mb-4">Li-ion Storage Batteries</h2>
             <p className="text-gray-700 mb-4">Reliable and sustainable energy storage solutions for both residential and commercial use.</p>
-            <p className="text-gray-700 mb-4">₹12000</p>
+            <p className="text-gray-700 mb-4 font-bold">₹12,000</p>
+
             <button className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">View Storage Options</button>
           </div>
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
@@ -117,8 +117,8 @@ const Page = () => {
           <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <h2 className="text-2xl sm:text-3xl font-semibold text-orange-600 mb-4">Customized Battery Packs</h2>
             <p className="text-gray-700 mb-4">Customized battery packs with custom power, voltage, output, connection type, and cell type, for every need, from transport to personal use.</p>
-            <p className="text-gray-700 mb-4">Contact us for a quote</p>
-            <button className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">Explore Rentals</button>
+            <p className="text-gray-700 mb-4 font-bold hover:text-orange-500 transition">Contact us for a quote</p>
+            <Link href="/contact" className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">Send a Quote</Link>
           </div>
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
             <div className="flex flex-col sm:flex-row gap-4">

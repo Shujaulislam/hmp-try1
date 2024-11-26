@@ -19,7 +19,7 @@ Humaya Power is at the forefront of energy transformation, specializing in high-
 - **Frontend Framework**: Next.js 14
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
-- **3D Rendering**: Three.js with React Three Fiber
+<!-- - **3D Rendering**: Three.js with React Three Fiber -->
 - **Typography**: Custom fonts with Montserrat and Syne
 - **Icons**: React Icons
 - **Type Safety**: TypeScript
