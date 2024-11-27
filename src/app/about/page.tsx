@@ -49,7 +49,7 @@ export default function AboutUs() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <Image src="/Background2.png" alt="Our Journey" width={500} height={300} className="rounded-lg shadow-xl" />
+              <Image src="/background2.png" alt="Our Journey" width={500} height={300} className="rounded-lg shadow-xl" />
             </motion.div>
             <motion.div
               className="md:w-1/2 md:pl-12"
