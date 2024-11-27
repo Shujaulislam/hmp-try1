@@ -9,7 +9,7 @@ import {
   FaEnvelope,
   FaExchangeAlt,
 } from "react-icons/fa";
-import { nunito, syne } from "../font";
+import { syne } from "../font";
 import Link from "next/link";
 
 
@@ -223,7 +223,7 @@ export default function ContactPage() {
                           htmlFor="message"
                           className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                         >
-                          Message
+                          Message *
                         </label>
                         <textarea
                           id="message"

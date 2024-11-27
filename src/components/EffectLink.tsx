@@ -40,7 +40,7 @@ export const EffectLink: React.FC<EffectLinkProps> = ({ children, className = ''
       </Link>
       {isTransitioning && (
         <div 
-          className="fixed inset-0 bg-white z-50 transition-transform duration-300 ease-in-out transform translate-x-full page-transition-overlay"
+          className="fixed inset-0 bg-black z-50 transition-transform duration-300 ease-in-out transform translate-x-full page-transition-overlay"
           aria-hidden="true"
         />
       )}

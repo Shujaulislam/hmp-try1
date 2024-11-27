@@ -1,8 +1,8 @@
 "use client"
+
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { EffectLink } from '../EffectLink';
 
 
 
@@ -91,9 +91,9 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <EffectLink href="/contact" onClick={closeNavbar} className="transition ease-linear hover:text-gray-200">
+                                <Link href="/contact" onClick={closeNavbar} className="transition ease-linear hover:text-gray-200">
                                     Contact Us
-                                </EffectLink>
+                                </Link>
                             </li>
                         </ul>
                         <div className="w-full flex md:w-max md:min-w-max md:items-center">
