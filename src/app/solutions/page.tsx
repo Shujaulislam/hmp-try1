@@ -37,6 +37,7 @@ const Page = () => {
           <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <h2 className="text-2xl sm:text-3xl font-semibold text-orange-600 mb-4">Battery Swap Stations</h2>
             <p className="text-gray-700 mb-4">Partner with us to build a network of battery swap stations for efficient and quick battery exchanges.</p>
+            <p className="text-gray-700 mb-4 font-bold">₹2 Lakh to ₹8 Lakh per station</p>
             <Link href="/contact" className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">Partner with Us</Link>
           </div>
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
@@ -99,7 +100,9 @@ const Page = () => {
             <p className="text-gray-700 mb-4">Reliable and sustainable energy storage solutions for both residential and commercial use.</p>
             <p className="text-gray-700 mb-4 font-bold">₹12,000</p>
 
-            <button className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">View Storage Options</button>
+            <button className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">
+            <Link href="/solutions/storagebatteries">View Storage Options</Link>
+            </button>
           </div>
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
             <Image
@@ -117,6 +120,7 @@ const Page = () => {
           <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <h2 className="text-2xl sm:text-3xl font-semibold text-orange-600 mb-4">Customized Battery Packs</h2>
             <p className="text-gray-700 mb-4">Customized battery packs with custom power, voltage, output, connection type, and cell type, for every need, from transport to personal use.</p>
+            <p className="text-gray-700 mb-4 font-bold">₹2,000 - ₹50,000 per pack</p>
             <p className="text-gray-700 mb-4 font-bold hover:text-orange-500 transition">Contact us for a quote</p>
             <Link href="/contact" className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition">Send a Quote</Link>
           </div>
