@@ -7,16 +7,12 @@ import {
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
-  FaChevronDown,
   FaExchangeAlt,
 } from "react-icons/fa";
-import { montserrat, nunito, syne } from "../font";
+import { nunito, syne } from "../font";
+import Link from "next/link";
 
-// const fadeInUp = {
-//   initial: { opacity: 0, y: 20 },
-//   animate: { opacity: 1, y: 0 },
-//   transition: { duration: 0.6 }
-// }
+
 const fadeInUp = {
   initial: { opacity: 0, y: 20, transition: { duration: 0.6 } },
   animate: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -86,15 +82,15 @@ export default function ContactPage() {
 
       {/* Contact Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
           <motion.h2
-            className={`${syne.className} text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900 dark:text-white`}
+            className={`${syne.className} text-3xl md:text-5xl font-bold mb-12 text-center text-gray-900 dark:text-white`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             Connect With Us
           </motion.h2>
+        <div className="max-w-4xl mx-auto">
           <div className="bg-white dark:bg-gray-800 shadow-2xl rounded-lg overflow-hidden">
             <div className="relative" style={{ perspective: "1000px" }}>
               <motion.div
@@ -107,33 +103,35 @@ export default function ContactPage() {
                     isFlipped ? "opacity-0 pointer-events-none" : "opacity-100"
                   } transition-opacity duration-500 ease-in-out`}
                 >
-                  <div className="bg-teal-600 text-white p-8 h-full">
-                    <h3 className={`${syne.className} text-2xl font-bold mb-6`}>
-                      Contact Information
-                    </h3>
-                    <div className={`${nunito.className} space-y-6`}>
-                      <div className="flex items-start">
-                        <FaMapMarkerAlt className="mt-1 mr-4 text-2xl" /> 
-                        <p>
-                          E-153, Gali No. 2, Chand Bagh, New Mustafabad, New
-                          Delhi, Delhi, 110094
+                  <div className="bg-teal-600 text-white p-8 h-full text-center flex items-center justify-center">
+                    <div className="space-y-10">
+                      <h3 className={`${syne.className} text-2xl font-bold`}>
+                        Contact Information
+                      </h3>
+                      <div className="flex items-center justify-center">
+                        <FaMapMarkerAlt className="mb-7 mr-4 text-2xl" />
+                        <p className="text-center text-2xl">
+                          E-153, Gali No. 2, Chand Bagh, New Mustafabad, <br />
+                          New Delhi, Delhi - 110094
                         </p>
                       </div>
-                      <div className="flex items-center">
+                      <div className="flex items-center justify-center">
                         <FaPhoneAlt className="mr-4 text-2xl" />
-                        <p>(+91) 729-1000-560</p>
+                        <p className="text-2xl">(+91) 729-1000-560</p>
                       </div>
-                      <div className="flex items-center">
-                        <FaEnvelope className="mr-4 text-2xl" />
-                        <p>info@humayapower.in</p>
+                      <div className="flex items-center justify-center">
+                        <Link href={`mailto:info@humayapower.in`}>
+                          <FaEnvelope className=" text-2xl" />
+                          <p className="-mt-[30px] ml-8 text-2xl">info@humayapower.in</p>
+                        </Link>
                       </div>
+                      <button
+                        onClick={() => setIsFlipped(!isFlipped)}
+                        className="mt-8 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-teal-600 bg-white hover:bg-teal-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-150 ease-in-out"
+                      >
+                        Contact Us <FaExchangeAlt className="ml-2" />
+                      </button>
                     </div>
-                    <button
-                      onClick={() => setIsFlipped(!isFlipped)}
-                      className="mt-8 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-teal-600 bg-white hover:bg-teal-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-150 ease-in-out"
-                    >
-                      Contact Us <FaExchangeAlt className="ml-2" />
-                    </button>
                   </div>
                 </div>
 
