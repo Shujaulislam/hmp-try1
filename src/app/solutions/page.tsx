@@ -221,7 +221,7 @@ const Page = () => {
             </div>
             <motion.div variants={fadeInUp} className="mt-16 bg-gray-100 rounded-lg p-8">
               <h3 className="text-2xl font-semibold mb-4">Customer Success Story</h3>
-              <blockquote className="text-gray-700 italic mb-4">"{solution.caseStudy.quote}"</blockquote>
+              <blockquote className="text-gray-700 italic mb-4">&ldquo;{solution.caseStudy.quote}&rdquo;</blockquote>
               <p className="font-medium">- {solution.caseStudy.company}</p>
             </motion.div>
           </div>
