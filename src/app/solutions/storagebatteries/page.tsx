@@ -93,7 +93,7 @@ const Page = () => {
         <h2 className={`${syne.className} text-3xl sm:text-4xl font-bold mb-12 text-center text-gray-900`}>
           Key Features
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -104,10 +104,12 @@ const Page = () => {
               viewport={{ once: true }}
               onClick={() => setActiveFeature(activeFeature === index ? null : index)}
             >
+              <div className="flex items-center gap-4">
               <div className="text-4xl text-orange-500 mb-4">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+              </div>
               <AnimatePresence>
                 {activeFeature === index && (
                   <motion.p
@@ -274,7 +276,7 @@ const Page = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-b from-orange-500 to-orange-700 text-white">
+      {/* <section className="py-16 bg-gradient-to-b from-orange-500 to-orange-700 text-white">
         <div className="container mx-auto px-4 sm:px-10 text-center">
           <h2 className={`${syne.className} text-3xl sm:text-4xl font-bold mb-6`}>
             Ready to Optimize Your Energy Storage?
@@ -289,6 +291,31 @@ const Page = () => {
             Get Started
           </Link>
         </div>
+      </section> */}
+      {/* new CTA */}
+      <section className="py-24 px-4 sm:px-10 md:px-24 lg:px-48">
+        <motion.div 
+          className="text-center bg-gradient-to-b from-orange-500 to-orange-700 p-16 rounded-2xl shadow-xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          >
+            <h2 className={`${syne.className}text-3xl sm:text-4xl md:text-5xl font-semibold text-white mb-6`}>
+              Ready to Optimize Your Energy Storage?
+            </h2>
+            <p className="text-white text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
+            Contact us today to learn how our advanced storage batteries can benefit your home or business.
+            </p>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            >
+            <Link href="/contact" className="bg-white text-orange-600 py-4 px-10 rounded-full hover:bg-gray-100 transition-colors inline-block text-lg font-medium">
+              Get Started
+            </Link>
+          </motion.div>
+        </motion.div>
       </section>
     </div>
   );

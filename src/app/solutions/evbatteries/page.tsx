@@ -151,7 +151,7 @@ function Page() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 bg-gradient-to-b from-orange-600 to-orange-900 text-white">
+      {/* <section className="py-24 px-4 bg-gradient-to-b from-orange-600 to-orange-900 text-white">
         <div className="container mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -167,6 +167,27 @@ function Page() {
             </div>
           </motion.div>
         </div>
+      </section> */}
+      {/* new CTA */}
+      <section className="py-24 px-4 sm:px-10 md:px-24 lg:px-48">
+        <motion.div 
+          className="text-center bg-gradient-to-b from-orange-500 to-orange-700 p-16 rounded-2xl shadow-xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          >
+          <h2 className={`${syne.className}text-3xl sm:text-4xl md:text-5xl font-semibold text-white mb-6`}>Ready to Power Your EV?</h2>
+          <p className="text-white text-xl mb-8 max-w-2xl mx-auto leading-relaxed">Experience the future of electric mobility with our high-performance batteries. Take the first step towards a greener, more efficient future.</p>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            >
+            <Link href="/contact" className="bg-white text-orange-600 py-4 px-10 rounded-full hover:bg-gray-100 transition-colors inline-block text-lg font-medium">
+              Contact Us Now
+            </Link>
+          </motion.div>
+        </motion.div>
       </section>
     </div>
   );
